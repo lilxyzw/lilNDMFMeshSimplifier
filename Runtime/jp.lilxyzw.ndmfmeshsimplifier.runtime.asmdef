@@ -1,0 +1,22 @@
+{
+    "name": "jp.lilxyzw.ndmfmeshsimplifier.runtime",
+    "rootNamespace": "",
+    "references": [
+        "VRC.SDKBase"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.vrchat.base",
+            "expression": "",
+            "define": "LIL_VRCSDK3"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -1,0 +1,37 @@
+{
+  "languageName": "English",
+  "localizeDatas": {
+    "inspector.quality": "Quality",
+    "inspector.quality.tooltip": "Quality of polygon reduction.",
+
+    "inspector.PreserveBorderEdges": "Preserve Border Edges",
+    "inspector.PreserveBorderEdges.tooltip": "If the border edges should be preserved.",
+
+    "inspector.PreserveUVSeamEdges": "Preserve UV Seam Edges",
+    "inspector.PreserveUVSeamEdges.tooltip": "If the UV seam edges should be preserved.",
+
+    "inspector.PreserveUVFoldoverEdges": "Preserve UV Foldover Edges",
+    "inspector.PreserveUVFoldoverEdges.tooltip": "If the UV foldover edges should be preserved.",
+
+    "inspector.PreserveSurfaceCurvature": "Preserve Surface Curvature",
+    "inspector.PreserveSurfaceCurvature.tooltip": "If the discrete curvature of the mesh surface be taken into account during simplification. Taking surface curvature into account can result in very good quality mesh simplification, but it can slow the simplification process significantly.",
+
+    "inspector.EnableSmartLink": "Enable Smart Link",
+    "inspector.EnableSmartLink.tooltip": "If a feature for smarter vertex linking should be enabled, reducing artifacts at the cost of slower simplification.",
+
+    "inspector.VertexLinkDistance": "Vertex Link Distance",
+    "inspector.VertexLinkDistance.tooltip": "The maximum distance between two vertices in order to link them.",
+
+    "inspector.MaxIterationCount": "Max Iteration Count",
+    "inspector.MaxIterationCount.tooltip": "The maximum iteration count. Higher number is more expensive but can bring you closer to your target quality.",
+
+    "inspector.Agressiveness": "Agressiveness",
+    "inspector.Agressiveness.tooltip": "The agressiveness of the mesh simplification. Higher number equals higher quality, but more expensive to run.",
+
+    "inspector.ManualUVComponentCount": "Manual UV Component Count",
+    "inspector.ManualUVComponentCount.tooltip": "If a manual UV component count should be used (set by UV Component Count below), instead of the automatic detection.",
+
+    "inspector.UVComponentCount": "UV Component Count",
+    "inspector.UVComponentCount.tooltip": "The UV component count. The same UV component count will be used on all UV channels."
+  }
+}

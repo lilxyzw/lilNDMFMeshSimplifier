@@ -1,0 +1,37 @@
+{
+  "languageName": "日本語",
+  "localizeDatas": {
+    "inspector.quality": "品質",
+    "inspector.quality.tooltip": "ポリゴン削減の品質。",
+
+    "inspector.PreserveBorderEdges": "境界エッジを保持",
+    "inspector.PreserveBorderEdges.tooltip": "境界エッジを保持する必要がある場合はオンにしてください。",
+
+    "inspector.PreserveUVSeamEdges": "UVシームのエッジを保持",
+    "inspector.PreserveUVSeamEdges.tooltip": "UVシームのエッジを保持する必要がある場合はオンにしてください。",
+
+    "inspector.PreserveUVFoldoverEdges": "UVフォールドオーバーエッジを保持",
+    "inspector.PreserveUVFoldoverEdges.tooltip": "UVフォールドオーバーエッジを保持する必要がある場合はオンにしてください。",
+
+    "inspector.PreserveSurfaceCurvature": "表面の曲率を保持",
+    "inspector.PreserveSurfaceCurvature.tooltip": "単純化中にメッシュ表面の離散曲率を考慮する必要がある場合はオンにしてください。表面の曲率を考慮すると、優れた品質のメッシュ簡素化が得られますが、簡略化プロセスが大幅に遅くなる可能性があります。",
+
+    "inspector.EnableSmartLink": "スマートリンクを有効化",
+    "inspector.EnableSmartLink.tooltip": "よりスマートな頂点リンクの機能を有効にする必要がある場合はオンにしてください。単純化が遅くなる代わりにアーティファクトが削減されます。",
+
+    "inspector.VertexLinkDistance": "頂点リンク距離",
+    "inspector.VertexLinkDistance.tooltip": "2つの頂点をリンクするための2つの頂点間の最大距離。",
+
+    "inspector.MaxIterationCount": "最大反復回数",
+    "inspector.MaxIterationCount.tooltip": "最大反復回数。数値が大きいほどコストは高くなりますが、目標の品質に近づけることができます。",
+
+    "inspector.Agressiveness": "積極性",
+    "inspector.Agressiveness.tooltip": "メッシュの単純化の積極性。数値が大きいほど品質は高くなりますが、実行コストが高くなります。",
+
+    "inspector.ManualUVComponentCount": "UVコンポーネント数を手動設定",
+    "inspector.ManualUVComponentCount.tooltip": "自動検出の代わりに手動のUVコンポーネントカウントを使用する必要がある場合はオンにしてください。(以下のUVコンポーネント数で設定)",
+
+    "inspector.UVComponentCount": "UVコンポーネント数",
+    "inspector.UVComponentCount.tooltip": "UVコンポーネントの数。すべてのUVチャンネルで同じUVコンポーネント数が使用されます。"
+  }
+}
