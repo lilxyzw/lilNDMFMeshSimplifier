@@ -13,7 +13,7 @@ namespace jp.lilxyzw.ndmfmeshsimplifier.NDMF
     {
         protected override void Configure()
         {
-            InPhase(BuildPhase.Optimizing).Run("Simplify meshes", ctx => {
+            InPhase(BuildPhase.Optimizing).BeforePlugin("com.anatawa12.avatar-optimizer").Run("Simplify meshes", ctx => {
                 var components = ctx.AvatarRootObject.GetComponentsInChildren<NDMFMeshSimplifier>();
                 foreach(var component in components)
                 {
