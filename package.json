@@ -11,6 +11,6 @@
   "url" : "https://github.com/lilxyzw/lilNDMFMeshSimplifier/releases/download/0.1.1/jp.lilxyzw.ndmfmeshsimplifier-0.1.1.zip?",
   "repo" : "https://lilxyzw.github.io/vpm-repos/vpm.json",
   "vpmDependencies": {
-    "nadena.dev.ndmf": "^1.0.0"
+    "nadena.dev.ndmf": "^1.5.0"
   }
 }
