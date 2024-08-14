@@ -3,6 +3,7 @@ using UnityEngine;
 namespace jp.lilxyzw.ndmfmeshsimplifier.runtime
 {
     [DisallowMultipleComponent]
+    [RequireComponent(typeof(Renderer))]
     internal class NDMFMeshSimplifier : MonoBehaviour
     #if LIL_VRCSDK3
     , VRC.SDKBase.IEditorOnly
