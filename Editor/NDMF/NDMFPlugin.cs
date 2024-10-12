@@ -21,7 +21,7 @@ namespace jp.lilxyzw.ndmfmeshsimplifier.NDMF
         {
             InPhase(BuildPhase.Optimizing).BeforePlugin("com.anatawa12.avatar-optimizer").Run("Simplify meshes", ctx =>
             {
-                var components = ctx.AvatarRootObject.GetComponentsInChildren<NDMFMeshSimplifier>();
+                var components = ctx.AvatarRootObject.GetComponentsInChildren<NDMFMeshSimplifier>(true);
                 foreach (var component in components)
                 {
                     var renderer = component.GetComponent<SkinnedMeshRenderer>();
