@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en-US\n"
+
+
+
+msgid "quality"
+msgstr "Quality"
+
+msgid "quality.tooltip"
+msgstr "Quality of polygon reduction."
+
+msgid "PreserveBorderEdges"
+msgstr "Preserve Border Edges"
+
+msgid "PreserveBorderEdges.tooltip"
+msgstr "If the border edges should be preserved."
+
+msgid "PreserveUVSeamEdges"
+msgstr "Preserve UV Seam Edges"
+
+msgid "PreserveUVSeamEdges.tooltip"
+msgstr "If the UV seam edges should be preserved."
+
+msgid "PreserveUVFoldoverEdges"
+msgstr "Preserve UV Foldover Edges"
+
+msgid "PreserveUVFoldoverEdges.tooltip"
+msgstr "If the UV foldover edges should be preserved."
+
+msgid "PreserveSurfaceCurvature"
+msgstr "Preserve Surface Curvature"
+
+msgid "PreserveSurfaceCurvature.tooltip"
+msgstr "If the discrete curvature of the mesh surface be taken into account during simplification. Taking surface curvature into account can result in very good quality mesh simplification, but it can slow the simplification process significantly."
+
+msgid "EnableSmartLink"
+msgstr "Enable Smart Link"
+
+msgid "EnableSmartLink.tooltip"
+msgstr "If a feature for smarter vertex linking should be enabled, reducing artifacts at the cost of slower simplification."
+
+msgid "VertexLinkDistance"
+msgstr "Vertex Link Distance"
+
+msgid "VertexLinkDistance.tooltip"
+msgstr "The maximum distance between two vertices in order to link them."
+
+msgid "MaxIterationCount"
+msgstr "Max Iteration Count"
+
+msgid "MaxIterationCount.tooltip"
+msgstr "The maximum iteration count. Higher number is more expensive but can bring you closer to your target quality."
+
+msgid "Agressiveness"
+msgstr "Agressiveness"
+
+msgid "Agressiveness.tooltip"
+msgstr "The agressiveness of the mesh simplification. Higher number equals higher quality, but more expensive to run."
+
+msgid "ManualUVComponentCount"
+msgstr "Manual UV Component Count"
+
+msgid "ManualUVComponentCount.tooltip"
+msgstr "If a manual UV component count should be used (set by UV Component Count below), instead of the automatic detection."
+
+msgid "UVComponentCount"
+msgstr "UV Component Count"
+
+msgid "UVComponentCount.tooltip"
+msgstr "The UV component count. The same UV component count will be used on all UV channels."

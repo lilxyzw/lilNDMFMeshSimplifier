@@ -4,9 +4,6 @@
   "displayName": "lilNDMFMeshSimplifier",
   "description": "Simplify meshes at build time.",
   "unity": "2022.3",
-  "dependencies": {
-    "com.unity.nuget.newtonsoft-json": "2.0.0"
-  },
   "license": "MIT",
   "url" : "https://github.com/lilxyzw/lilNDMFMeshSimplifier/releases/download/0.2.0/jp.lilxyzw.ndmfmeshsimplifier-0.2.0.zip?",
   "repo" : "https://lilxyzw.github.io/vpm-repos/vpm.json",

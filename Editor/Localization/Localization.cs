@@ -1,72 +1,77 @@
+using System;
 using System.Collections.Generic;
-using System.IO;
-using UnityEditor;
-using Newtonsoft.Json;
 using System.Globalization;
-using UnityEngine;
+using System.IO;
+using System.Linq;
 using System.Text;
+using UnityEditor;
+using UnityEngine;
 
 namespace jp.lilxyzw.ndmfmeshsimplifier
 {
-    internal class Localization
+    [FilePath("jp.lilxyzw/ndmfmeshsimplifier.asset", FilePathAttribute.Location.PreferencesFolder)]
+    internal partial class L10n : ScriptableSingleton<L10n>
     {
-        private static readonly string PATH_PREF = $"{UnityEditorInternal.InternalEditorUtility.unityPreferencesFolder}/jp.lilxyzw";
-        private static readonly string FILENAME_SETTING = "ndmfmeshsimplifier.language.conf";
-        private static string PATH_SETTING => $"{PATH_PREF}/{FILENAME_SETTING}";
-        private static List<LocalizationData> languages = new List<LocalizationData>();
-        private static List<string> codes = new List<string>();
-        private static string[] names;
-        private static int number;
+        public string language;
+        public LocalizationAsset localizationAsset;
+        private static string[] languages;
+        private static string[] languageNames;
+        private static readonly Dictionary<string, GUIContent> guicontents = new();
+        private static string localizationFolder => AssetDatabase.GUIDToAssetPath("1cb6b060ffc4d7d4d8672a457cb7d3c7");
 
-        [InitializeOnLoadMethod]
-        private static void LoadDatas()
+        internal static void Load()
         {
-            var paths = Directory.GetFiles(AssetDatabase.GUIDToAssetPath("1cb6b060ffc4d7d4d8672a457cb7d3c7"), "*.json");
-            var tmpNames = new List<string>();
-            foreach(var path in paths)
-            {
-                var langData = File.ReadAllText(path);
-                var lang = JsonConvert.DeserializeObject<LocalizationData>(langData);
-                if(lang == null) continue;
-                var code = Path.GetFileNameWithoutExtension(path).ToLower();
-                languages.Add(lang);
-                codes.Add(code);
-                tmpNames.Add(lang.languageName);
-            }
-            names = tmpNames.ToArray();
-            number = codes.IndexOf(LoadLanguageSettings());
-            if(number == -1) number = codes.IndexOf("en-us");
-            if(number == -1) number = 0;
+            guicontents.Clear();
+            var path = localizationFolder + "/" + instance.language + ".po";
+            if(File.Exists(path)) instance.localizationAsset = AssetDatabase.LoadAssetAtPath<LocalizationAsset>(path);
+
+            if(!instance.localizationAsset) instance.localizationAsset = new LocalizationAsset();
         }
 
-        internal static string S(string key)
+        internal static string[] GetLanguages()
         {
-            return languages[number].GetValue(key);
+            return languages ??= Directory.GetFiles(localizationFolder).Where(f => f.EndsWith(".po")).Select(f => Path.GetFileNameWithoutExtension(f)).ToArray();
         }
 
-        internal static GUIContent G(string key)
+        internal static string[] GetLanguageNames()
         {
-            return new GUIContent(S(key), S($"{key}.tooltip"));
+            return languageNames ??= languages.Select(l => {
+                if(l == "zh-Hans") return "简体中文";
+                if(l == "zh-Hant") return "繁體中文";
+                return new CultureInfo(l).NativeName;
+            }).ToArray();
+        }
+
+        internal static string L(string key)
+        {
+            if(!instance.localizationAsset) Load();
+            return instance.localizationAsset.GetLocalizedString(key);
+        }
+
+        private static GUIContent G(string key) => G(key, null, "");
+        private static GUIContent G(string[] key) => key.Length == 2 ? G(key[0], null, key[1]) : G(key[0], null, null);
+        internal static GUIContent G(string key, string tooltip) => G(key, null, tooltip); // From EditorToolboxSettings
+        private static GUIContent G(string key, Texture image) => G(key, image, "");
+        internal static GUIContent G(SerializedProperty property) => G(property.name, $"{property.name}.tooltip");
+
+        private static GUIContent G(string key, Texture image, string tooltip)
+        {
+            if(!instance.localizationAsset) Load();
+            if(guicontents.TryGetValue(key, out var content)) return content;
+            return guicontents[key] = new GUIContent(L(key), image, L(tooltip));
         }
 
         internal static void SelectLanguageGUI()
         {
+            var langs = GetLanguages();
+            var names = GetLanguageNames();
             EditorGUI.BeginChangeCheck();
-            number = EditorGUILayout.Popup("Editor Language", number, names);
-            if(EditorGUI.EndChangeCheck()) SaveLanguageSettings();
-        }
-
-        private static string LoadLanguageSettings()
-        {
-            if(!Directory.Exists(PATH_PREF)) Directory.CreateDirectory(PATH_PREF);
-            if(!File.Exists(PATH_SETTING)) SafeIO.SaveFile(PATH_SETTING, CultureInfo.CurrentCulture.Name.ToLower());
-            return SafeIO.LoadFile(PATH_SETTING);
-        }
-
-        private static void SaveLanguageSettings()
-        {
-            if(!Directory.Exists(PATH_PREF)) Directory.CreateDirectory(PATH_PREF);
-            SafeIO.SaveFile(PATH_SETTING, codes[number]);
+            var ind = EditorGUILayout.Popup("Language", Array.IndexOf(langs, instance.language), names);
+            if(EditorGUI.EndChangeCheck())
+            {
+                instance.language = langs[ind];
+                Load();
+            }
         }
     }
 
