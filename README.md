@@ -1,8 +1,10 @@
 lilNDMFMeshSimplifier
 ====
 
-# This project is under development and may be subject to breaking changes
-# このプロジェクトは開発中であり破壊的な変更がされる場合があります
+# This project is discontinued and is no longer maintained!
+# Please use [Meshia Mesh Simplification](https://github.com/RamType0/Meshia.MeshSimplification) instead!
+# このプロジェクトは終了しており、メンテナンスもされていません！
+# 代わりに [Meshia Mesh Simplification](https://github.com/RamType0/Meshia.MeshSimplification) を使用してください！
 
 ## What is this
 
