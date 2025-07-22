@@ -12,7 +12,7 @@ namespace jp.lilxyzw.ndmfmeshsimplifier
         {
             L10n.SelectLanguageGUI();
             EditorGUILayout.HelpBox(L10n.G("PlaceUseMeshia", "").text, MessageType.Warning, true);
-#if MESHIA_CONTAINS
+#if ENABLE_MESHIA_MESH_SIMPLIFICATION
             if (GUILayout.Button(L10n.G("MigrationToMeshia", "")))
             {
                 foreach (var t in targets)
@@ -40,7 +40,7 @@ namespace jp.lilxyzw.ndmfmeshsimplifier
             serializedObject.ApplyModifiedProperties();
         }
 
-#if MESHIA_CONTAINS
+#if ENABLE_MESHIA_MESH_SIMPLIFICATION
         public static void MigrationToMeshiaMeshSimplification(NDMFMeshSimplifier lilNDMFMeshSimplifier)
         {
             var gameObject = lilNDMFMeshSimplifier.gameObject;
