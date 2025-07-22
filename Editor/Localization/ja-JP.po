@@ -74,7 +74,7 @@ msgid "UVComponentCount.tooltip"
 msgstr "UVコンポーネントの数。すべてのUVチャンネルで同じUVコンポーネント数が使用されます。"
 
 msgid "PlaceUseMeshia"
-msgstr "このパッケージ lilNDMFMeshSimplifier はメンテナンスされていません！\n代わりに、メンテナンスがされていて優れた品質と非常に高い速度で動作する Meshia Mesh Simplification を使用してください。"
+msgstr "このパッケージ lilNDMFMeshSimplifier はメンテナンスされていません。\n代わりに、メンテナンスがされていて優れた品質と非常に高い速度で動作する Meshia Mesh Simplification を使用してください。"
 
 msgid "OpenMeshiaBOOTH"
 msgstr "Meshia Mesh Simplification の BOOTH を開く"

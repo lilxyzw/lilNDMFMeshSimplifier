@@ -1,10 +1,10 @@
 lilNDMFMeshSimplifier
 ====
 
-# This project is discontinued and is no longer maintained!
-# Please use [Meshia Mesh Simplification](https://github.com/RamType0/Meshia.MeshSimplification) instead!
-# このプロジェクトは終了しており、メンテナンスもされていません！
-# 代わりに [Meshia Mesh Simplification](https://github.com/RamType0/Meshia.MeshSimplification) を使用してください！
+# This project is discontinued and is no longer maintained.
+# Please use [Meshia Mesh Simplification](https://github.com/RamType0/Meshia.MeshSimplification) instead.
+# このプロジェクトは終了しており、メンテナンスもされていません。
+# 代わりに [Meshia Mesh Simplification](https://github.com/RamType0/Meshia.MeshSimplification) を使用してください。
 
 ## What is this
 
