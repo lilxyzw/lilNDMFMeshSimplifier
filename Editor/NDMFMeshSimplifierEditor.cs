@@ -1,3 +1,4 @@
+using System;
 using jp.lilxyzw.ndmfmeshsimplifier.runtime;
 using UnityEditor;
 using UnityEngine;
@@ -55,8 +56,12 @@ namespace jp.lilxyzw.ndmfmeshsimplifier
             var meshiaOptions = Meshia.MeshSimplification.MeshSimplifierOptions.Default;
             meshiaOptions.PreserveBorderEdges = lilNDMFMeshSimplifier.options.PreserveBorderEdges;
             meshiaOptions.PreserveSurfaceCurvature = lilNDMFMeshSimplifier.options.PreserveSurfaceCurvature;
+
             meshiaOptions.EnableSmartLink = lilNDMFMeshSimplifier.options.EnableSmartLink;
-            meshiaOptions.VertexLinkDistance = (float)lilNDMFMeshSimplifier.options.VertexLinkDistance;
+            var vertexDistance = lilNDMFMeshSimplifier.options.VertexLinkDistance;
+            vertexDistance = vertexDistance >= double.Epsilon ? Math.Max(vertexDistance, float.Epsilon) : vertexDistance;
+
+            meshiaOptions.VertexLinkDistance = (float)vertexDistance;
             meshiaMeshSimplifier.options = meshiaOptions;
 
             UnityEngine.Object.DestroyImmediate(lilNDMFMeshSimplifier);
