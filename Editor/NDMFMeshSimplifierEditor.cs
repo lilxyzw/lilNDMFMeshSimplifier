@@ -12,15 +12,15 @@ namespace jp.lilxyzw.ndmfmeshsimplifier
         public sealed override void OnInspectorGUI()
         {
             L10n.SelectLanguageGUI();
-            EditorGUILayout.HelpBox(L10n.G("PlaceUseMeshia", "").text, MessageType.Warning, true);
+            EditorGUILayout.HelpBox(L10n.G("PleaseUseMeshia", "").text, MessageType.Warning, true);
 #if ENABLE_MESHIA_MESH_SIMPLIFICATION
-            if (GUILayout.Button(L10n.G("MigrationToMeshia", "")))
+            if (GUILayout.Button(L10n.G("MigrateToMeshia", "")))
             {
                 foreach (var t in targets)
                 {
                     if (t == null) { continue; }
                     if (t is not NDMFMeshSimplifier targetSimplifier) { continue; }
-                    MigrationToMeshiaMeshSimplification(targetSimplifier);
+                    MigrateToMeshiaMeshSimplification(targetSimplifier);
                 }
                 return;
             }
@@ -42,7 +42,7 @@ namespace jp.lilxyzw.ndmfmeshsimplifier
         }
 
 #if ENABLE_MESHIA_MESH_SIMPLIFICATION
-        public static void MigrationToMeshiaMeshSimplification(NDMFMeshSimplifier lilNDMFMeshSimplifier)
+        public static void MigrateToMeshiaMeshSimplification(NDMFMeshSimplifier lilNDMFMeshSimplifier)
         {
             var gameObject = lilNDMFMeshSimplifier.gameObject;
             var meshiaMeshSimplifier = Undo.AddComponent<Meshia.MeshSimplification.Ndmf.MeshiaMeshSimplifier>(gameObject);

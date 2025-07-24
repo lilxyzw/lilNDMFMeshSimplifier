@@ -73,11 +73,11 @@ msgstr "UV Component Count"
 msgid "UVComponentCount.tooltip"
 msgstr "The UV component count. The same UV component count will be used on all UV channels."
 
-msgid "PlaceUseMeshia"
-msgstr "This package lilNDMFMeshSimplifier is no longer maintained.\nPlease use Mesia Mesh Simplification instead, which is maintained, has better quality and works much faster."
+msgid "PleaseUseMeshia"
+msgstr "This package lilNDMFMeshSimplifier is no longer maintained.\nPlease use Meshia Mesh Simplification instead, which is maintained, has better quality and works much faster."
 
 msgid "OpenMeshiaBOOTH"
 msgstr "Open Meshia Mesh Simplification BOOTH"
 
-msgid "MigrationToMeshia"
+msgid "MigrateToMeshia"
 msgstr "Remove this component and migrate Meshia Mesh Simplification"
