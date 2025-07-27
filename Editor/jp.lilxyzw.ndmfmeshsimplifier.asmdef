@@ -3,7 +3,9 @@
     "rootNamespace": "",
     "references": [
         "jp.lilxyzw.ndmfmeshsimplifier.runtime",
-        "nadena.dev.ndmf"
+        "nadena.dev.ndmf",
+        "Meshia.MeshSimplification.Ndmf.Runtime",
+        "Meshia.MeshSimplification.Runtime"
     ],
     "includePlatforms": [
         "Editor"
@@ -14,6 +16,12 @@
     "precompiledReferences": [],
     "autoReferenced": false,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.ramtype0.meshia.mesh-simplification",
+            "expression": "[3.0.0,4.0.0)",
+            "define": "ENABLE_MESHIA_MESH_SIMPLIFICATION"
+        }
+    ],
     "noEngineReferences": false
 }
